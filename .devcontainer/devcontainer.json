@@ -6,14 +6,15 @@
 
   "workspaceFolder": "/workspaces/soba",
 
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspaces/soba,type=bind"
+  ],
+
   "forwardPorts": [4000, 5173, 27017],
 
   "customizations": {
     "vscode": {
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
-      ]
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
     }
   },
 
