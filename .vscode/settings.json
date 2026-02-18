@@ -1,15 +1,18 @@
 {
-  "editor.defaultFormatter": "fronterior.biome-monorepo",
-  "editor.formatOnSave": true,
-  "eslint.format.enable": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.fixAll.eslint": "explicit"
-  },
-  "json.schemas": [
-    {
-      "fileMatch": ["biome.json", "biome.jsonc"],
-      "url": "https://biomejs.dev/schemas/1.7.0/schema.json"
-    }
-  ]
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.formatOnSave": true,
+	"eslint.format.enable": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit",
+		"source.fixAll.eslint": "explicit"
+	},
+	"json.schemas": [
+		{
+			"fileMatch": ["biome.json", "biome.jsonc"],
+			"url": "https://biomejs.dev/schemas/2.4.2/schema.json"
+		}
+	]
 }
