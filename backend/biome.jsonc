@@ -1,0 +1,22 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.4.2/schema.json",
+	"root": false,
+	"extends": "//",
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"style": "error",
+			"correctness": "error"
+		}
+	},
+	"files": {
+		"includes": [
+			"**",
+
+			"!dist",
+			"!node_modules",
+			"!package-lock.json"
+		]
+	}
+}

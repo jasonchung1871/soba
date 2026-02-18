@@ -1,0 +1,13 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.4.2/schema.json",
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
+	"formatter": {
+		"lineWidth": 100,
+		"indentStyle": "tab"
+	}
+}

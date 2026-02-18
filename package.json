@@ -1,0 +1,9 @@
+{
+	"scripts": {
+		"lint:frontend": "cd frontend && biome lint",
+		"lint:backend": "cd backend && biome lint"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.2"
+	}
+}

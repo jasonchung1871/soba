@@ -1,9 +1,15 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "fronterior.biome-monorepo",
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.fixAll.eslint": "explicit"
-  }
+  },
+  "json.schemas": [
+    {
+      "fileMatch": ["biome.json", "biome.jsonc"],
+      "url": "https://biomejs.dev/schemas/1.7.0/schema.json"
+    }
+  ]
 }

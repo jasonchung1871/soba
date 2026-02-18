@@ -1,5 +1,5 @@
 {
-  "name": "soba-ui",
+  "name": "soba",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,23 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "migrate": "biome migrate eslint --write"
   },
   "dependencies": {
-    "@formio/js": "^5.3.0",
-    "@formio/react": "^6.2.0",
-    "@reduxjs/toolkit": "^2.11.2",
-    "bootstrap": "^5.3.8",
-    "keycloak-js": "^26.2.3",
     "next": "16.1.6",
-    "next-redux-wrapper": "^8.1.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "react-redux": "^9.2.0"
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
