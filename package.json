@@ -1,13 +1,14 @@
 {
 	"scripts": {
 		"lint": "pnpm lint:frontend && pnpm lint:backend",
-		"lint:frontend": "cd frontend && biome lint",
-		"lint:backend": "cd backend && biome lint",
+		"lint:frontend": "cd frontend && tsc --noEmit && biome lint",
+		"lint:backend": "cd backend && tsc --noEmit && biome lint",
 		"format": "pnpm format:frontend && pnpm format:backend",
 		"format:frontend": "cd frontend && biome format --write",
 		"format:backend": "cd backend && biome format --write"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.4.2"
+		"@biomejs/biome": "^2.4.2",
+		"@types/normalize-package-data": "^2.4.4"
 	}
 }

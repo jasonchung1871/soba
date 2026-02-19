@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { getDictionary, hasLocale } from '@/app/[lang]/dictionaries';
 import { FormBuilder } from '@/app/ui/FormBuilder';
 
-export default async function BuilderPage({ params }: PageProps<'/[lang]'>) {
+export default async function BuilderPage({ params }: { params: Promise<{ lang: string }> }) {
 	const { lang } = await params;
 
 	if (!hasLocale(lang)) notFound();
