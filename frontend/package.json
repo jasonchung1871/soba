@@ -9,6 +9,9 @@
 	},
 	"dependencies": {
 		"@formatjs/intl-localematcher": "^0.8.1",
+		"@formio/js": "5.3.1-refb-rc.0",
+		"@formio/react": "^6.2.0",
+		"bootstrap": "^5.3.8",
 		"next": "16.1.6",
 		"react": "19.2.3",
 		"react-dom": "19.2.3"

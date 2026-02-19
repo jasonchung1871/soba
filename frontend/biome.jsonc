@@ -54,7 +54,8 @@
 			"!.next",
 			"!out",
 			"!package-lock.json",
-			"!next-env.d.ts"
+			"!next-env.d.ts",
+			"!public"
 		]
 	},
 
