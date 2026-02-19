@@ -1,45 +1,28 @@
-import { match } from '@formatjs/intl-localematcher';
-import { type NextRequest, NextResponse } from 'next/server';
-
-const locales = ['en', 'fr'];
-const defaultLocale = 'en';
-
-// Get the preferred locale, similar to the above or using a library
-function getLocale(request: NextRequest) {
-	const accept = request.headers.get('accept-language') || '';
-	const languages = accept.split(',').map((part) => part.split(';')[0].trim());
-	return match(languages, locales, defaultLocale);
-}
+import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
+import { handleAuthentication } from '@/lib/proxy/auth';
+import { handleLocaleRouting } from '@/lib/proxy/locale';
+import { isStaticAsset } from '@/lib/proxy/static';
 
 export function proxy(request: NextRequest) {
-	const { pathname } = request.nextUrl;
-
 	// Skip static assets
-	if (
-		pathname.startsWith('/bootstrap') ||
-		pathname.startsWith('/formio') ||
-		pathname.startsWith('/favicon') ||
-		pathname.startsWith('/robots') ||
-		pathname.startsWith('/sitemap') ||
-		pathname.startsWith('/images') ||
-		pathname.startsWith('/icons')
-	) {
+	if (isStaticAsset(request)) {
 		return;
 	}
 
-	// Check if there is any supported locale in the pathname
-	const pathnameHasLocale = locales.some(
-		(locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
-	);
+	// Handle locale routing
+	const localeResponse = handleLocaleRouting(request);
+	if (localeResponse) return localeResponse;
 
-	if (pathnameHasLocale) return;
+	// Handle authentication for protected routes
+	const authResponse = handleAuthentication(request);
+	if (authResponse) return authResponse;
 
-	// Redirect if there is no locale
-	const locale = getLocale(request);
-	request.nextUrl.pathname = `/${locale}${pathname}`;
-	return NextResponse.redirect(request.nextUrl);
+	return NextResponse.next();
 }
 
 export const config = {
-	matcher: ['/((?!_next|bootstrap|formio|favicon.ico|robots.txt|sitemap.xml|images|icons).*)'],
+	matcher: [
+		'/((?!_next|bootstrap|formio|favicon.ico|robots.txt|sitemap.xml|images|icons|silent-check-sso.html).*)',
+	],
 };

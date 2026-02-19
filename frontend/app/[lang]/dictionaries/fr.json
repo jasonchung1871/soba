@@ -8,9 +8,16 @@
 		"description": "Formulaires de Nouvelle Génération",
 		"notAuthenticated": "Vous n'êtes pas authentifié. Veuillez vous connecter pour accéder à cette section."
 	},
+	"idp": {
+		"types": {
+			"idir": "IDIR",
+			"bceid": "BCeID"
+		}
+	},
 	"header": {
 		"list": "Liste des Formulaires",
-		"builder": "Constructeur de Formulaires"
+		"builder": "Constructeur de Formulaires",
+		"idp": "Fournisseurs d'Identité"
 	},
 
 	"Basic": "Basique",

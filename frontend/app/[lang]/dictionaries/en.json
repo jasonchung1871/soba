@@ -8,9 +8,16 @@
 		"description": "Next Gen Forms",
 		"notAuthenticated": "You are not authenticated. Please login to access this section."
 	},
+	"idp": {
+		"types": {
+			"idir": "IDIR",
+			"bceid": "BCeID"
+		}
+	},
 	"header": {
 		"list": "Form List",
-		"builder": "Form Builder"
+		"builder": "Form Builder",
+		"idp": "Identity Providers"
 	},
 
 	"Basic": "Basic",
