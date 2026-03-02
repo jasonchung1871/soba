@@ -189,7 +189,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ${{ github.workspace }}
-          dockerfile: ${{ matrix.dockerfile_dir }}/Dockerfile
+          file: ${{ matrix.dockerfile_dir }}/Dockerfile
           platforms: ${{ matrix.platform }}
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
