@@ -1,1 +1,0 @@
-pnpm --workspace-root commitlint --edit "$1"
