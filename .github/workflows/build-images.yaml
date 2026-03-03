@@ -189,7 +189,7 @@ jobs:
         id: build
         uses: docker/build-push-action@v6
         with:
-          context: ${{ github.workspace }}
+          context: .
           file: ${{ matrix.dockerfile_dir }}/Dockerfile
           platforms: ${{ matrix.platform }}
           labels: |
